@@ -1,4 +1,3 @@
-/* TODO: Styles */
 @import url('https://fonts.googleapis.com/css?family=Montserrat:500&display=swap');
 
 html, * {
@@ -18,7 +17,7 @@ html, * {
 }
 
 .grey {
-  color: #4b6584;
+  color: #394050;
 }
 
 h1 {

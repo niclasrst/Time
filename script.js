@@ -1,32 +1,40 @@
 // TODO: JavaScript Part
 
-let months = document.querySelector('h1');
-let weeks = document.querySelector('h2');
-let days = document.querySelector('h3');
-let hours = document.querySelector('h4');
-let minutes = document.querySelector('h5');
-let seconds = document.querySelector('h6');
+let months = document.querySelector('h1'),
+	weeks = document.querySelector('h2'),
+	days = document.querySelector('h3'),
+	hours = document.querySelector('h4'),
+	minutes = document.querySelector('h5'),
+	seconds = document.querySelector('h6');
 
 let salvation = new Date(2020, 04, 04);
-let today = Date.now();
-let dur = salvation - today;
 
-let milli = dur;
-let sec = Math.floor(milli / 1000);
-let min = Math.floor(sec / 60);
-let hour = Math.floor(min / 60);
-let day = Math.floor(hour / 24);
-let week = Math.floor(day / 7);
-let month = Math.floor(day / 30);
-
-console.log('millis - ', dur);
-console.log('secs - ', sec, ' - ', Math.round(sec));
-console.log('mins - ', min, ' - ', Math.round(min));
-console.log('hours - ', hour, ' - ', Math.round(hour));
-console.log('days - ', day, ' - ', Math.round(day));
-console.log('weeks - ', week, ' - ', Math.round(week));
-console.log('months - ', month, ' - ', Math.round(month));
+let sec = Math.floor((salvation - Date.now()) / 1000),
+	min = Math.floor(sec / 60),
+	hour = Math.floor(min / 60),
+	day = Math.floor(hour / 24),
+	week = Math.floor(day / 7),
+	month = (day / 30).toFixed(1);
 
 months.innerHTML = `${month} <span class='grey'>MONTHS</span>`;
 weeks.innerHTML = `${week} <span class='grey'>WEEKS</span>`;
 days.innerHTML = `${day} <span class='grey'>DAYS</span>`;
+hours.innerHTML = `${hour} <span class='grey'>HOURS</span>`;
+minutes.innerHTML = `${min} <span class='grey'>MINUTES</span>`;
+seconds.innerHTML = `${sec} <span class='grey'>SECONDS</span>`;
+
+setInterval(() => {
+	sec = Math.floor((salvation - Date.now()) / 1000);
+	min = Math.floor(sec / 60);
+	hour = Math.floor(min / 60);
+	day = Math.floor(hour / 24);
+	week = Math.floor(day / 7);
+	month = (day / 30).toFixed(1);
+
+	months.innerHTML = `${month} <span class='grey'>MONTHS</span>`;
+	weeks.innerHTML = `${week} <span class='grey'>WEEKS</span>`;
+	days.innerHTML = `${day} <span class='grey'>DAYS</span>`;
+	hours.innerHTML = `${hour} <span class='grey'>HOURS</span>`;
+	minutes.innerHTML = `${min} <span class='grey'>MINUTES</span>`;
+	seconds.innerHTML = `${sec} <span class='grey'>SECONDS</span>`;
+}, 1000);
