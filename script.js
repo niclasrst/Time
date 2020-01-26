@@ -7,7 +7,7 @@ let months = document.querySelector('h1'),
 	minutes = document.querySelector('h5'),
 	seconds = document.querySelector('h6');
 
-let salvation = new Date(2020, 04, 04);
+let salvation = new Date(2020, 04, 05);
 
 let sec = Math.floor((salvation - Date.now()) / 1000),
 	min = Math.floor(sec / 60),
